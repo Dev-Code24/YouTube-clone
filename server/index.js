@@ -24,27 +24,15 @@ app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(
-//   cors({
-//     // origin: "https://youtube-clone-tlmx.onrender.com",
-//     origin: "http://localhost:3000",
-//     credentials: true,
-//   })
-// );
 
-const allowedOrigins = ["https://youtube-clone-tlmx.onrender.com", "http://localhost:3000"];
 app.use(
   cors({
-    origin: (origin, callback) => {
-      if (allowedOrigins.includes(origin)) {
-        callback(null, true); // Allow the origin
-      } else {
-        callback(new Error("Not allowed by CORS")); // Block the origin
-      }
-    },
-    credentials: true, // Allow cookies and credentials
+    origin: "https://youtube-clone-tlmx.onrender.com",
+    // origin: "http://localhost:3000",
+    credentials: true,
   })
 );
+
 app.use(cookieParser());
 
 app.use(mongoSanitize());
