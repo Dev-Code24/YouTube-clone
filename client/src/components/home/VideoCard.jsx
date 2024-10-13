@@ -65,10 +65,10 @@ const VideoCard = ({ videoData }) => {
           preload="metadata"
           ref={videoRef}
           style={style}
-          src={videoData.mediaUrl}
+          src={videoData?.mediaUrl}
           className="video"
         >
-          <source src={videoData.mediaUrl} type="video/mp4" />
+          <source src={videoData?.mediaUrl} type="video/mp4" />
         </video>
         <div
           className="controls visible-hidden"
@@ -111,23 +111,23 @@ const VideoCard = ({ videoData }) => {
       <Box className="video-data" sx={{ display: "flex", marginTop: "12px", marginRight: "50px" }}>
         <Box className="channel-image">
           <img
-            src={videoData.createdBy.imgUrl} //
+            src={videoData?.createdBy.imgUrl} //
             alt="channel-icon"
             style={{ borderRadius: "50%", height: "36px" }}
           />
         </Box>
         <Box className="video-details" sx={{ marginLeft: "12px" }}>
-          <Typography variant="h5">{videoData.title}</Typography>
+          <Typography variant="h5">{videoData?.title}</Typography>
           <Box className="video-basic-details" sx={{ marginTop: "4px" }}>
             <Box className="video-basic-detail">
               <Typography variant="h6" sx={{ color: "#AAAAAA" }}>
-                {videoData.createdBy.name}
+                {videoData?.createdBy.name}
               </Typography>
             </Box>
             <Box className="video-basic-detail">
               <Typography variant="h6" sx={{ color: "#AAAAAA", lineHeight: 1 }}>
-                <span>{formatNumber(videoData.views)} views</span> {` `}
-                <span>• {formatTimeAgo(videoData.createdAt)}</span>
+                <span>{formatNumber(videoData?.views)} views</span> {` `}
+                <span>• {formatTimeAgo(videoData?.createdAt)}</span>
               </Typography>
             </Box>
           </Box>

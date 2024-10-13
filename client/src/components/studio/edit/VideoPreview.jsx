@@ -1,6 +1,5 @@
-import { Box, Typography } from "@mui/material";
-import React, { useEffect, useRef, useState } from "react";
-import { formatVideoTime } from "../../FormatFns";
+import { Box } from "@mui/material";
+import React from "react";
 
 const VideoPreview = ({ isSideBarOpen, mediaUrl }) => {
   return (

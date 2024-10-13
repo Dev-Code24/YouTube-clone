@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton } from "@mui/material";
 import AfterUploadTimeline from "./AfterUploadTimeline";
 import { useTheme } from "@emotion/react";
@@ -12,7 +12,6 @@ import { useSelector } from "react-redux";
 import { decodeToken } from "react-jwt";
 
 import CloseIcon from "@mui/icons-material/Close";
-import { StudioContext } from "../../../scenes/studio";
 
 const AfterUploadDialog = ({
   selectedFile,
@@ -25,9 +24,10 @@ const AfterUploadDialog = ({
   setVideoCloudinaryData,
   uploading,
   vidDuration,
+  shortsRefetch,
+  videoRefetch,
 }) => {
   const theme = useTheme();
-  const { shortsRefetch, videoRefetch } = useContext(StudioContext);
   const token = useSelector((state) => state.global.token);
   const decodedToken = !token ? null : decodeToken(token);
 
@@ -134,7 +134,7 @@ const AfterUploadDialog = ({
               setTitleInput={setTitleInput}
               desInput={desInput}
               setDesInput={setDesInput}
-              videoUrl={videoCloudinaryData.videoUrl}
+              videoUrl={videoCloudinaryData?.videoUrl}
               filename={selectedFile.name}
             />
           )}

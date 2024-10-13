@@ -26,8 +26,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(
   cors({
-    origin: "https://youtube-clone-tlmx.onrender.com",
-    // origin: "http://localhost:3000",
+    // origin: "https://youtube-clone-tlmx.onrender.com",
+    origin: "http://localhost:3000",
     credentials: true,
   })
 );

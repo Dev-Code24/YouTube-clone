@@ -117,7 +117,7 @@ export default function EditSidebar({ isSideBarOpen, setIsSideBarOpen }) {
           >
             <ListItemButton
               onClick={() => {
-                navigate(`/studio/${decodedToken.id}}`);
+                navigate(`/studio/${decodedToken.id}`);
                 handleRefetch();
               }}
               sx={{

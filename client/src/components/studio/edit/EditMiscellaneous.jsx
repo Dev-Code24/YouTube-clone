@@ -8,7 +8,7 @@ const EditMiscellaneous = ({ editedVideoDetails, setEditedVideoDetails, globalMe
   const theme = useTheme();
   return (
     <Box sx={{ paddingLeft: "24px" }}>
-      <VideoBoxWithDetails mediaUrl={globalMediaUrl} filename={globalTitle} widthVal="352" heightVal="198" />
+      <VideoBoxWithDetails videoUrl={globalMediaUrl} filename={globalTitle} widthVal="352" heightVal="198" />
       <VisibilitySelect theme={theme} editedVideoDetails={editedVideoDetails} setEditedVideoDetails={setEditedVideoDetails} />
     </Box>
   );
